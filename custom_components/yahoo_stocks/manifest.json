@@ -1,0 +1,11 @@
+{
+  "domain": "yahoo_stocks",
+  "name": "Yahoo Stocks",
+  "version": "1.0.2",
+  "documentation": "https://example.invalid/yahoo_stocks",
+  "issue_tracker": "https://example.invalid/yahoo_stocks/issues",
+  "requirements": [],
+  "codeowners": [],
+  "iot_class": "cloud_polling",
+  "config_flow": true
+}

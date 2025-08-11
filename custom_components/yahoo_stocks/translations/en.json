@@ -1,0 +1,36 @@
+{
+  "title": "Yahoo Stocks",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Yahoo Stocks",
+        "description": "Track multiple Yahoo Finance tickers. Enter a comma-separated list like `QQQ, SPY, TQQQ`. If Yahoo rate-limits or blocks requests, try setting a custom User-Agent.",
+        "data": {
+          "tickers": "Tickers (comma-separated)",
+          "include_prepost": "Include pre/after hours",
+          "fast_interval": "Polling seconds during market hours (Mon\u2013Fri 9:30\u201316:00 ET)",
+          "slow_interval": "Polling seconds off-hours",
+          "user_agent": "User-Agent"
+        }
+      }
+    },
+    "error": {
+      "no_tickers": "Enter at least one ticker."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Yahoo Stocks Options",
+        "description": "Adjust your tickers, polling cadence, and User-Agent. Tickers are sorted and de-duplicated automatically on save.",
+        "data": {
+          "tickers": "Tickers (comma-separated)",
+          "include_prepost": "Include pre/after hours",
+          "fast_interval": "Polling seconds during market hours",
+          "slow_interval": "Polling seconds off-hours",
+          "user_agent": "User-Agent"
+        }
+      }
+    }
+  }
+}
