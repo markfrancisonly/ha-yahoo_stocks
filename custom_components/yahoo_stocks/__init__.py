@@ -107,6 +107,13 @@ class StocksCoordinator(DataUpdateCoordinator[dict]):
         if not self.symbols:
             return {}
 
+        now = datetime.now(ZoneInfo("America/New_York"))
+        market_open_now = _is_market_open(now)
+        market_open_recent = _is_market_open(now - timedelta(minutes=30))
+
+        if not market_open_now and not market_open_recent and self.data:
+            return self.data  # type: ignore[return-value]
+
         async def fetch_symbol(sym: str) -> tuple[str, dict | None]:
             url = YF_URL.format(
                 symbol=sym, include_prepost=str(self.include_prepost).lower()
