@@ -112,7 +112,7 @@ class StocksCoordinator(DataUpdateCoordinator[dict]):
         market_open_recent = _is_market_open(now - timedelta(minutes=30))
 
         if not market_open_now and not market_open_recent and self.data:
-            return self.data  # type: ignore[return-value]
+            return self.data  
 
         async def fetch_symbol(sym: str) -> tuple[str, dict | None]:
             url = YF_URL.format(
